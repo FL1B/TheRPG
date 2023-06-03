@@ -1,7 +1,11 @@
 package Game;
 
+import java.util.Scanner;
+
 public class Prompts
 {
+    static Scanner scanner = new Scanner(System.in);
+    static boolean askAgain = true;
     public static void startGame() {
         System.out.println("Welcome to The RPG!");
         System.out.println("");
@@ -14,7 +18,43 @@ public class Prompts
     }
 
     public static void gamePlay() {
+        do {
+            String input = scanner.nextLine();
 
+            switch (input.toLowerCase()) {
+                case "move forward":
+                    Movement.moveForward();
+                    break;
+
+                case "move left":
+                    Movement.moveLeft();
+                    break;
+
+                case "move right":
+                    Movement.moveRight();
+                    break;
+
+                case "move backwards":
+                    Movement.moveBackwards();
+                    break;
+
+                case "search area":
+                    System.out.println("Searched area");
+                    break;
+
+                case "use item":
+                    System.out.println("Item used");
+                    break;
+
+                case "help":
+                    listOfCommands();
+                    break;
+
+                default:
+                    System.out.println("Invalid command. Please try again.");
+                    System.out.println("Type 'help' for list of commands.");
+            }
+        } while (askAgain);
     }
 
     public static void listOfCommands() {
@@ -26,6 +66,5 @@ public class Prompts
         System.out.println(" - Search area");
         System.out.println(" - Use item");
         System.out.println(" - Help (list of commands)");
-        System.out.println("");
     }
 }

@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class CavePosition
 {
     // Fields
-    public static int caveDirections = 1;
+    public static int minCaveDirections = 1;
+    public static int maxCaveDirections = 4;
     public static ArrayList<String> levels = new ArrayList<>();
     static {
         levels.add("dim lit");
@@ -15,4 +16,8 @@ public class CavePosition
         levels.add("burning hell");
     }
 
+    /*
+    public static int directionsRandom() {
+        
+    } */
 }
